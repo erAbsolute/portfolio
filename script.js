@@ -18,7 +18,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Copy email to clipboard
 const copyEmailBtn = document.getElementById('copy-email');
-const EMAIL = 'alejandro.pr.dev@gmail.com';
+const EMAIL = 'alejandro@perezrubio.dev';
 
 copyEmailBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(EMAIL).then(() => {
