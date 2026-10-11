@@ -15,3 +15,28 @@ links.querySelectorAll('a').forEach((link) => {
 
 // Dynamic year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Copy email to clipboard
+const copyEmailBtn = document.getElementById('copy-email');
+const EMAIL = 'alejandro.pr.dev@gmail.com';
+
+copyEmailBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(EMAIL).then(() => {
+        copyEmailBtn.textContent = 'Copied!';
+        setTimeout(() => {
+            copyEmailBtn.textContent = 'Email';
+        }, 2000);
+    }).catch(() => {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = EMAIL;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        copyEmailBtn.textContent = 'Copied!';
+        setTimeout(() => {
+            copyEmailBtn.textContent = 'Email';
+        }, 2000);
+    });
+});
