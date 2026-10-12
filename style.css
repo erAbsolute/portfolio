@@ -15,6 +15,7 @@
     --clr-accent: #4f8cff;
     --clr-accent-hover: #3a6fd8;
     --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
     --max-width: 960px;
     --radius: 10px;
 }
@@ -54,9 +55,10 @@ a:hover {
 }
 
 .nav__brand {
+    font-family: var(--font-mono);
     font-weight: 700;
     font-size: 1.25rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: var(--clr-accent);
 }
 
